@@ -107,16 +107,17 @@ jobs:
           ./clone-target-repo.ps1
           ./build.ps1 -ImageName "pwcs" -ProjectType "dotnet" -ProjectName "migrator" `
             -DockerfilePath "./src/aspnet-core/src/Firebytes.Template.Migrator/Dockerfile"
-  # deploy:
-  #   runs-on: ubuntu-22.04
-  #   if: ${{ always() }}
-  #   needs: [ build-dotnet, build-vue ]
-  #   steps:
-  #     # checkout source code
-  #     - uses: actions/checkout@v2
-  #     # build
-  #     - name: build 1
-  #       shell: pwsh
-  #       working-directory: ./build
-  #       run: |
-  #         Write-Host "Deploy!!!!"
+
+  build-complete:
+    runs-on: ubuntu-22.04
+    if: ${{ always() }}
+    needs: [ build-hostapi, build-migrator, build-vue ]
+    steps:
+      # checkout source code
+      - uses: actions/checkout@v2
+      # build
+      - name: build 1
+        shell: pwsh
+        working-directory: ./build
+        run: |
+          ./bot.ps1 -BotUrl $env:Bot -Msg 'Build Complete'
