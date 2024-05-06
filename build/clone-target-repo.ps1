@@ -40,12 +40,10 @@ if ($ciConfig.mode -eq 'tag') {
     Set-Location repo-code/build
 }
 
-
-
-
-
-
-
-
-
-
+# 执行错误判断
+if ($Error.Count -eq 0) {
+    exit 0
+}
+else {
+    exit 1
+}
