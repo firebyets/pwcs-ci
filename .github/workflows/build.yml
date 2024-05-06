@@ -16,6 +16,7 @@ env:
   DOTNET_NUGET_CONFIG: ${{ vars.DOTNET_NUGET_CONFIG }}
   NPM_REGISTRY: ${{ vars.NPM_REGISTRY }}
   NPM_NPMRC: ${{ vars.NPM_NPMRC }}
+  BOT: ${{ vars.BOT }}
 
 jobs:
   build-vue:
@@ -120,4 +121,4 @@ jobs:
         shell: pwsh
         working-directory: ./build
         run: |
-          ./bot.ps1 -BotUrl $env:Bot -Msg 'Build Complete'
+          ./bot.ps1 -BotUrl $env:BOT -Msg 'Build Complete'
