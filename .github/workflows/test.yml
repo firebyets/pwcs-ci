@@ -1,0 +1,25 @@
+name: "test"
+
+on:
+  push:
+
+
+env:
+  BOT: ${{ vars.BOT2 }}
+  action_repository: ${{ github.action_repository }}
+  repositoryUrl: ${{ github.repositoryUrl }}
+  run_id: ${{ github.run_id }}
+  run_number: ${{ github.run_number }}
+
+jobs:
+  build-complete:
+    runs-on: ubuntu-22.04
+    steps:
+      # checkout source code
+      - uses: actions/checkout@v2
+      # build
+      - name: build 1
+        shell: pwsh
+        working-directory: ./build
+        run: |
+          ./bot.ps1 -BotUrl $env:BOT -Msg 'Build Complete'
