@@ -21,7 +21,9 @@ $branchOrTag = $ciConfig.branch
 $commit = $ciConfig.commit
 
 # 环境变量参数
+$repository = $env:repository
 $repositoryUrl = $env:repositoryUrl
+$action_repository = $env:action_repository
 $run_id = $env:run_id
 $run_number = $env:run_number
 
@@ -32,7 +34,9 @@ ${Msg}
 ----------- build info -----------
 ${branchOrTagKey}: ${branchOrTag}
 commit: ${commit}
+repository: ${repository}
 repositoryUrl: ${repositoryUrl}
+action_repository: ${action_repository}
 run_id: ${run_id}
 run_number: ${run_number}
 "@

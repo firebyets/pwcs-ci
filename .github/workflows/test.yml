@@ -6,8 +6,9 @@ on:
 
 env:
   BOT: ${{ vars.BOT2 }}
-  action_repository: ${{ github.action_repository }}
+  repository: ${{ github.repository }}
   repositoryUrl: ${{ github.repositoryUrl }}
+  action_repository: ${{ github.action_repository }}
   run_id: ${{ github.run_id }}
   run_number: ${{ github.run_number }}
 
