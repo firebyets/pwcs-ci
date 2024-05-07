@@ -33,8 +33,8 @@ ${Msg}
 ${branchOrTagKey}: ${branchOrTag}
 commit: ${commit}
 repositoryUrl: ${repositoryUrl}
-run_id: ${repositoryUrl}
-run_number: ${repositoryUrl}
+run_id: ${run_id}
+run_number: ${run_number}
 "@
 
 
