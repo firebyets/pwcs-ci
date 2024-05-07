@@ -27,13 +27,16 @@ $action_repository = $env:action_repository
 $run_id = $env:run_id
 $run_number = $env:run_number
 
+$workflowUrl = "https://github.com/${env:repository}/actions/runs/${env:run_id}"
+
 $noticeMsg = @"
------------ ${currentDateStr} -----------
+--- ${currentDateStr} ---
 ${Msg}
 
------------ build info -----------
+--- build info ---
 ${branchOrTagKey}: ${branchOrTag}
 commit: ${commit}
+workflow: ${workflowUrl}
 repository: ${repository}
 repositoryUrl: ${repositoryUrl}
 action_repository: ${action_repository}
