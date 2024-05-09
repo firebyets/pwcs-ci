@@ -19,15 +19,10 @@ if ($ciConfig.mode -eq 'tag') {
 }
 $branchOrTag = $ciConfig.branch
 $commit = $ciConfig.commit
-
-# 环境变量参数
-$repository = $env:repository
-$repositoryUrl = $env:repositoryUrl
-$action_repository = $env:action_repository
-$run_id = $env:run_id
-$run_number = $env:run_number
+$gitlabPipelineId = $ciConfig.gitlabPipelineId
 
 $workflowUrl = "https://github.com/${env:repository}/actions/runs/${env:run_id}"
+$pipelineUrl = "${env:GIT_REPO_PIPLINE}/${gitlabPipelineId}"
 
 $noticeMsg = @"
 --- ${currentDateStr} ---
@@ -36,12 +31,8 @@ ${Msg}
 --- build info ---
 ${branchOrTagKey}: ${branchOrTag}
 commit: ${commit}
-workflow: ${workflowUrl}
-repository: ${repository}
-repositoryUrl: ${repositoryUrl}
-action_repository: ${action_repository}
-run_id: ${run_id}
-run_number: ${run_number}
+github workflow: ${workflowUrl}
+gitlab pipeline: ${pipelineUrl}
 "@
 
 
