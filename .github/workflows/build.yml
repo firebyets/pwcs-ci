@@ -6,7 +6,11 @@ on:
       - 'src/**'
 
 env:
+  repository: ${{ github.repository }}
+  run_id: ${{ github.run_id }}
+  BOT: ${{ vars.BOT }}
   GIT_REPO: ${{ vars.GIT_REPO }}
+  GIT_REPO_PIPLINE: ${{ vars.GIT_REPO_PIPLINE }}
   BASE_IMAGE_REGISTRY: ${{ vars.BASE_IMAGE_REGISTRY }}
   IMAGE_REGISTRY: ${{ vars.IMAGE_REGISTRY }}
   IMAGE_REGISTRY_USERNAME: ${{ vars.IMAGE_REGISTRY_USERNAME }}
@@ -16,7 +20,6 @@ env:
   DOTNET_NUGET_CONFIG: ${{ vars.DOTNET_NUGET_CONFIG }}
   NPM_REGISTRY: ${{ vars.NPM_REGISTRY }}
   NPM_NPMRC: ${{ vars.NPM_NPMRC }}
-  BOT: ${{ vars.BOT }}
 
 jobs:
   build-vue:
