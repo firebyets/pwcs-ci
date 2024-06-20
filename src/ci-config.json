@@ -1,6 +1,6 @@
 {
+  "commit": "80994a20b1d6fd71a1a06209889dd9c3f9f2f1a0",
+  "gitlabPipelineId": "379",
   "branch": "dev-1.0",
-  "mode": "commit",
-  "gitlabPipelineId": "378",
-  "commit": "5ac740beadf81cd03ea6e77f388d8953d764c7b5"
+  "mode": "commit"
 }
