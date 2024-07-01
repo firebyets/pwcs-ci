@@ -80,7 +80,7 @@ jobs:
         run: |
           ./clone-target-repo.ps1
           ./build.ps1 -ImageName "pwcs" -ProjectType "dotnet" -ProjectName "hostapi" `
-            -DockerfilePath "./src/aspnet-core/src/Firebytes.Template.Web.Host/Dockerfile"
+            -DockerfilePath "./src/aspnet-core/src/PWCS.Web.Host/Dockerfile"
 
   build-migrator:
     runs-on: ubuntu-22.04
@@ -110,7 +110,7 @@ jobs:
         run: |
           ./clone-target-repo.ps1
           ./build.ps1 -ImageName "pwcs" -ProjectType "dotnet" -ProjectName "migrator" `
-            -DockerfilePath "./src/aspnet-core/src/Firebytes.Template.Migrator/Dockerfile"
+            -DockerfilePath "./src/aspnet-core/src/PWCS.Migrator/Dockerfile"
 
   build-complete:
     runs-on: ubuntu-22.04
